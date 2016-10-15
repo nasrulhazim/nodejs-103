@@ -1,8 +1,16 @@
+body, html { height: 100%; }
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 a {
   color: #00B7FF;
+}
+
+input, button {
+	padding: 14px;
+	line-height: 2em;
 }
