@@ -53,3 +53,21 @@ In `app.js`, you can use it like:
 ```javascript
 var varName = posts.varName;
 ```
+
+## How to get value from parameters?
+
+```javascript
+let user_id = req.params.user_id;
+```
+
+## How to get value from query string?
+
+```javascript
+let user_id = req.query.user_id;
+```
+
+## How to get value from body(form submission)?
+
+```javascript
+let user_id = req.body.user_id;
+``` 
