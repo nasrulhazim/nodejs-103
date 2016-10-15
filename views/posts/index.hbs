@@ -1,1 +1,13 @@
 <h1>Post List</h1>
+
+<a href="/posts/create">New Blog</a>
+
+<ul>
+	{{#each posts}}
+		<li>{{ title }} 
+		<a href="/posts/{{_id}}">Show</a>
+		<a href="/posts/{{_id}}/edit">Details</a>
+		<a href="/posts/delete/{{_id}}">Delete</a>
+		</li>
+	{{/each}}
+</ul>

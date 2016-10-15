@@ -83,3 +83,60 @@ var logger = require('morgan');
 ```javascript
 app.use(logger('dev'));
 ```
+
+## Using Mongoose 
+
+Install Mongoose
+
+```
+npm install mongoose --save
+```
+
+Include in `app.js` and connect to the database:
+
+```javascript
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
+```
+
+### How to create a model?
+
+```javascript
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var postSchema  = new Schema({
+	title: String,
+	description: String
+});
+
+var Post = mongoose.model('Post', postSchema);
+
+module.exports = Post;
+```
+
+### How to store a new record?
+
+```javascript
+var post = new Post(req.body).save();
+post.title = title;
+post.description = description;
+post.save();
+```
+
+OR to be short
+
+```javascript
+var post = new Post(req.body).save();
+```
+
+### How to remove a record?
+
+```javascript
+Post.remove({ _id : id }, function(err){
+	if (err) 
+		return handleError(err);
+
+	console.log('Post removed');
+});
+```
