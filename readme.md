@@ -63,11 +63,23 @@ let user_id = req.params.user_id;
 ## How to get value from query string?
 
 ```javascript
-let user_id = req.query.user_id;
+var user_id = req.query.user_id;
 ```
 
 ## How to get value from body(form submission)?
 
 ```javascript
-let user_id = req.body.user_id;
-``` 
+var user_id = req.body.user_id;
+```
+
+## How to disable logger?
+
+Comment out the following lines:
+
+```javascript
+var logger = require('morgan');
+```
+
+```javascript
+app.use(logger('dev'));
+```
